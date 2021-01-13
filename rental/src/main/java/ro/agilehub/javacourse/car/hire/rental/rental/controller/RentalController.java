@@ -1,6 +1,7 @@
 package ro.agilehub.javacourse.car.hire.rental.rental.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import ro.agilehub.javacourse.car.hire.rental.api.model.CreatedDTO;
@@ -15,7 +16,9 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class RentalController implements RentalApi {
 
+    @Autowired
     private final RentalService rentalService;
+    @Autowired
     private final RentalDTOMapper rentalDTOMapper;
 
     @Override
