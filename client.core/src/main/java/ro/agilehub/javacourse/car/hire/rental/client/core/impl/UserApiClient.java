@@ -20,7 +20,7 @@ public interface UserApiClient extends UserApi {
     @Override
     @CircuitBreaker(name = CORE, fallbackMethod = "coreFallback")
     @RateLimiter(name = CORE)
-    @GetMapping(value = "/user/{id}")
+    @GetMapping(value = "/users/{id}")
     ResponseEntity<UserDTO> getUser(@PathVariable("id") Integer id);
 
     default ResponseEntity<UserDTO> coreFallback(Integer id, CallNotPermittedException exception) {

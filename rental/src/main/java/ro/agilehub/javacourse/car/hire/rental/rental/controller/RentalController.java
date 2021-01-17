@@ -1,7 +1,6 @@
 package ro.agilehub.javacourse.car.hire.rental.rental.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import ro.agilehub.javacourse.car.hire.rental.api.model.CreatedDTO;
@@ -14,14 +13,14 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
+//@RequestMapping(value = "/rentals")
 public class RentalController implements RentalApi {
 
-    @Autowired
     private final RentalService rentalService;
-    @Autowired
     private final RentalDTOMapper rentalDTOMapper;
 
     @Override
+//    @GetMapping(value = "/id")
     public ResponseEntity<CreatedDTO> addRental(@Valid RentalDTO rentalDTO) {
         var id = rentalService.createNewRental(rentalDTOMapper.toRentalDO(rentalDTO));
         return ResponseEntity.ok(new CreatedDTO().id(id));

@@ -10,7 +10,7 @@ servers:
     description: local environment
     variables:
       port:
-        default: '8090'
+        default: '8082'
 tags:
   - name: rental
     description: Rental resource
