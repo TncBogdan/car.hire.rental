@@ -8,6 +8,8 @@ import ro.agilehub.javacourse.car.hire.rental.rental.service.domain.RentalDO;
 @Mapper(componentModel = "spring", uses = {TimestampMapper.class})
 public interface RentalDOMapper {
 
+//    RentalDO toRentalDO(Rental rental, UserDTO userDTO, CarDTO carDTO);
+
     @Mapping(target = "carId", source = "car.id")
     @Mapping(target = "userId", source = "user.id")
     Rental toRental(RentalDO rentalDO);

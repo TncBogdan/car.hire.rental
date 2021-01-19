@@ -9,5 +9,4 @@ public interface RentalDTOMapper {
 
     RentalDO toRentalDO(RentalDTO rentalDTO);
 
-    RentalDTO toRentalDTO(RentalDO rentalDO);
 }
