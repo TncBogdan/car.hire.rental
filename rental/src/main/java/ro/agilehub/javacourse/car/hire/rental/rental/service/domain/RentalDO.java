@@ -1,18 +1,16 @@
 package ro.agilehub.javacourse.car.hire.rental.rental.service.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.time.OffsetDateTime;
 
-@Data
-@EqualsAndHashCode(of = "id")
-public class RentalDO {
+public record RentalDO(Integer id, UserDO user, CarDO car, OffsetDateTime startDate, OffsetDateTime endDate,
+                       RentalStatusDO status) {
 
-    private Integer id;
-    private UserDO user;
-    private CarDO car;
-    private OffsetDateTime startDate;
-    private OffsetDateTime endDate;
-    private RentalStatusDO status;
+    @Override
+    public Integer id() {
+        return id;
+    }
+
+    public void setStatus(RentalStatusDO active) {
+    }
 }

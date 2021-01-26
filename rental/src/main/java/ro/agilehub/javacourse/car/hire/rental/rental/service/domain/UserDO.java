@@ -1,20 +1,11 @@
 package ro.agilehub.javacourse.car.hire.rental.rental.service.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import ro.agilehub.javacourse.car.hire.rental.api.model.UserStatus;
 
-@Data
-@EqualsAndHashCode(of = "id")
-public class UserDO {
+public record UserDO(Integer id, String email, String username, String firstName, String lastName, String driverLicense,
+                     UserStatusDO status) {
 
-    private Integer id;
-    private String email;
-    private String username;
-    private String firstName;
-    private String lastName;
-    private String driverLicense;
-    private UserStatusDO status;
-
+    @Override
+    public Integer id() {
+        return id;
+    }
 }

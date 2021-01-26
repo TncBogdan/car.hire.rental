@@ -21,12 +21,12 @@ public class DefaultRentalService implements RentalService {
     private final RentalRepository rentalRepository;
 
     @Override
-    public Integer createNewRental(RentalDO example) {
-        var userDTOResponseEntity = userApi.getUser(example.getUser().getId());
-        var carDTOResponseEntity = carApi.getCar(example.getCar().getId());
+    public Integer createNewRental(RentalDO rentalDO) {
+        var userDTOResponseEntity = userApi.getUser(rentalDO.id());
+        var carDTOResponseEntity = carApi.getCar(rentalDO.id());
         if (userDTOResponseEntity.hasBody() && carDTOResponseEntity.hasBody()) {
-            example.setStatus(RentalStatusDO.ACTIVE);
-            var newRental = rentalDOMapper.toRental(example);
+            rentalDO.setStatus(RentalStatusDO.ACTIVE);
+            var newRental = rentalDOMapper.toRental(rentalDO);
             rentalRepository.save(newRental);
             return newRental.getId();
         }
