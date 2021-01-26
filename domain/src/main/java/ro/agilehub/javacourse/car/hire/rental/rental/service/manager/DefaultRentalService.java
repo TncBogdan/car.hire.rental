@@ -1,13 +1,10 @@
-package ro.agilehub.javacourse.car.hire.rental.rental.service.impl;
+package ro.agilehub.javacourse.car.hire.rental.rental.service.manager;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ro.agilehub.javacourse.car.hire.rental.rental.service.definition.RentalService;
 import ro.agilehub.javacourse.car.hire.rental.rental.service.domain.RentalDO;
 import ro.agilehub.javacourse.car.hire.rental.rental.service.domain.RentalStatusDO;
-import ro.agilehub.javacourse.car.hire.rental.rental.service.manager.CarManager;
-import ro.agilehub.javacourse.car.hire.rental.rental.service.manager.RentalManager;
-import ro.agilehub.javacourse.car.hire.rental.rental.service.manager.UserManager;
 
 import java.util.NoSuchElementException;
 
